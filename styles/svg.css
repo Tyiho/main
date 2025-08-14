@@ -1,0 +1,19 @@
+.title {
+    font : bold 10px serif;
+    font-family : Times New Roman;
+    fill: #ffffffff;
+    transition: all 2s;
+}
+.title:hover {
+    fill: url("#BackgroundGradient");
+    font: bold 11px serif;
+}
+.carouselControl {
+    font : 5px monospace;
+    fill : #ffffff3a;
+    transition: all .5s;
+}
+.carouselControl:hover {
+    fill: #ffffffcb;
+    cursor: pointer;
+}

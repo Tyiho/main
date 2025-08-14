@@ -4,20 +4,9 @@
 
 layout: base
 ---
+<link href="{{site.baseurl}}/styles/svg.css" rel="stylesheet" type="text/css" />
 
 <svg viewBox="0 0 100 100">
-    <style>
-        .title {
-            font : bold 10px serif;
-            font-family : Times New Roman;
-            fill: #ffffffff;
-            transition: all 2s;
-        }
-        .title:hover {
-            fill: url("#BackgroundGradient");
-            font: bold 11px serif;
-        }
-    </style>
     <defs>
         <radialGradient id="BackgroundGradient">
             <stop offset="0%" stop-color="#f0f598" />
@@ -28,12 +17,21 @@ layout: base
             <stop offset="100%" stop-color="#f5ff32ff" />
         </radialGradient>
     </defs>
-    <polygon  fill="#272727ff" points="0,0 3,0 6,100 0,100" />
-    <polygon  fill="#777777ff" points="0,30 100,40 100,60 0,70" />
-    <polygon  fill="#272727ff" points="92,0 100,0 100,100 95,100" />
-     <!-- article 1 -->
-    <rect stroke="black" width="20" height="11" x="6" y="18" />
+    <!-- carousel 1 -->
+    <g id="carousel">
+        <rect id="carouselBackground" stroke="black" width="100" height="28" x="0" y="11" />
+        <g id="carouselSlides"/>
+        <g id="carouselControls">
+            <text textLength="5" text x="10" y="25" id="carouselControlLeft" class="carouselControl"><</text>
+            <text textLength="5" text x="80" y="25" id="carouselControlRight" class="carouselControl">></text>
+        </g>
+    </g>
+    <!-- sides -->
+    <polygon  fill="#ffe600ff" points="0,0 3,0 6,100 0,100" />
+    <polygon  fill="#424242ff" points="0,30 100,40 100,60 0,70" />
+    <polygon  fill="#ffe600ff" points="92,0 100,0 100,100 95,100" />
     <!-- title -->
     <polygon  fill="#3d3d3dff" points="0,0 100,0 100,11 0,17" />
     <text stroke="black" stroke-width=".15" textLength="80" text x="10" y="10" class="title">Trystan's Portal</text>
 </svg>
+
