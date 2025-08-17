@@ -23,7 +23,7 @@ email: trystan.yt.1@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Creating a personal website for sharing my experience and expertise with the world.
   Hopefully I do a good job.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/main" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
