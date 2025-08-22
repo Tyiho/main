@@ -6,7 +6,7 @@ layout: base
 ---
 <link href="{{site.baseurl}}/styles/svg.css" rel="stylesheet" type="text/css" />
 
-<svg viewBox="0 0 100 100">
+<svg viewBox="0 0 100 200">
     <defs>
         <radialGradient id="BackgroundGradient">
             <stop offset="0%" stop-color="#f0f598" />
