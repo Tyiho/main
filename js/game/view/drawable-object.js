@@ -1,11 +1,15 @@
 export default class DrawableObject { 
-    constructor(image) { 
-        this.image = image
-        this.width = image.width
-        this.height = image.height
+    x = 0;
+    y = 0;
+    width = 0;
+    height = 0;
+    constructor(x, y, width, height) { 
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
     }
-
     draw(context) {
-        context.drawImage(this.image,0,0)
+        context.fillRect(this.x, this.y, this.width, this.height);
     }
 }
