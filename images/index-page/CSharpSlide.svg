@@ -15,8 +15,8 @@
         <polyline id="CSharpHexagon" points="0,0 4.33,2.5 4.33,7.5 0,10 -4.33,7.5 -4.33,2.5" fill="#8f00819a"/>
     </defs>
     <rect x="0" y="0" width="100" height="34" fill="url(#CSharpBackgroundGradient)" />
-    <path id="lineAC" d="M 0 0 C 20 10, 35 -5 55 5 S 85 2 100 0 Z"  fill="#cc2fbcb6" stroke-width="1" />
-    <path id="lineAC" d="M 0 34 C 10 27, 25 38, 40 30 S 70 30 100 34 Z"  fill="#ae1cbcb6" stroke-width="1"/>
+    <path d="M 0 0 C 20 10, 35 -5 55 5 S 85 2 100 0 Z"  fill="#cc2fbcb6" />
+    <path d="M 0 34 C 10 27, 25 38, 40 30 S 70 30 100 34 Z"  fill="#ae1cbcb6"/>
     <use href="#CSharpHexagon" transform="translate(5,5) rotate(25, 0, 5) scale(1)"/>
     <use href="#CSharpHexagon" transform="translate(90,5) rotate(45, 0, 5) scale(1)"/>
     <use href="#CSharpHexagon" transform="translate(65,9) rotate(35, 0, 5) scale(1)"/>
