@@ -1,5 +1,8 @@
 const _svgNS = 'http://www.w3.org/2000/svg';
 
+/*
+* Carousel Class built for an svg
+*/
 export default class Carousel { 
     static count = 0;
     constructor(svgGroup, options) { 
@@ -180,7 +183,6 @@ export default class Carousel {
     }
 
     cycleUp() { 
-        console.log(this.slides);
         this.activeSlideIndex = (this.activeSlideIndex + 1) % this.slides.length;
         this.updateSlides(true)
     }

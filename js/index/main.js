@@ -1,4 +1,4 @@
-import Carousel from "./carousel.js";
+import Carousel from "../classes/carousel.js";
 
 new Carousel(document.getElementById("carousel"), {
     PreserveAspectRatio: true,

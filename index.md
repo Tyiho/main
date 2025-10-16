@@ -40,4 +40,4 @@ layout: base
     <text stroke="black" stroke-width=".15" textLength="80" text x="10" y="10" class="title">Trystan's Portal</text>
 </svg>
 
-<script type="module" src="{{site.baseurl}}/js/index/main.js"></script>
+<script type="module" src="{% link js/index/main.js %}"></script>

@@ -4,6 +4,7 @@
 title: Game
 permalink: /test/
 layout: base
+icon: images/index-page/CSharpSlide.svg
 ---
 <svg viewbox="0 0 160 90">
     <style>
