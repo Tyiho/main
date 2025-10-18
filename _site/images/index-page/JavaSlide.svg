@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 34">
+    <style>
+        .JavaTitle{
+            font : bold 18px serif;
+            font-family : system-ui;
+            fill : #ffffff;
+        }
+    </style>
+    <defs>
+        <radialGradient id="JavaBackgroundGradient">
+            <stop offset="0%" stop-color="#5989e9ff" />
+            <stop offset="25%" stop-color="#5965e9ff" />
+            <stop offset="100%" stop-color="#5997e9ff" />
+        </radialGradient>
+        <linearGradient id="JavaFireGradient" gradientTransform="rotate(0)">
+            <stop offset="0%" stop-color="#e9a659ff" />
+            <stop offset="50%" stop-color="#e97159ff" />
+            <stop offset="100%" stop-color="#e97659ff" />
+        </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="100" height="34" fill="url(#JavaBackgroundGradient)" />
+    <path d="M 6 0 C 12 14 15 13 24 10 S 36 6 53 12 C 43 0 33 2 28 4 S 17 5 15 0 Z"  fill="url(#JavaFireGradient)" />
+    <path d="M 25 34 C 29 31 29 29 34 25 S 47 27 57 21 C 56 29 51 28 44 28 S 39 31 35 34 Z"  fill="url(#JavaFireGradient)" />
+    <path d="M 90 0 C 93 12 88 15 84 16 S 77 18 75 29 C 64 17 75 13 79 11 S 85 7 83 0 Z" fill="url(#JavaFireGradient)" />
+    <path d="M 3 26 C 11 24 8 22 12 19 S 20 21 25 17 C 21 23 16 20 15 25 S 9 27 3 26 Z" fill="url(#JavaFireGradient)" />
+    <path d="M 93 13 C 92 21 92 26 88 27 S 85 27 80 33 C 79 25 85 22 87 22 S 91 17 93 13 Z" fill="url(#JavaFireGradient)" />
+    <text stroke-width=".25" textLength="40" x="27" y="22" class="JavaTitle">Java</text>
+</svg>

@@ -1,0 +1,369 @@
+<!doctype html>
+<html>
+  <head prefix="og: https://ogp.me/ns#">
+    
+    
+
+    <!-- import site styles-->
+    <link href="/main/styles/base.css" rel="stylesheet" type="text/css" />
+    <!-- import bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- if page defines an website icon, then use it, else use default website icon-->
+    <link rel="icon" type="image/x-icon" href="/main/favicon.ico" />
+    
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://localhost:4000/main/java/polymorphism" />
+    <meta property="og:image" content="http://localhost:4000/main/favicon.ico" />
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.title" content="" />
+    <meta name="dcterms.created" content="" />
+    <meta name="dcterms.available" content="" />
+    <meta name="dcterms.modified" content="" />
+    <meta name="dcterms.creator" content="Trystan Schmits" />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        </button>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <div class="container">
+                    <a class="navbar-brand" href="/main/">
+                        <img src="/main/images/website-icon.png" width="32" height="32"
+                            class="d-inline-block align-text-top" />
+                        Home
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/main/about">About</a>
+            </li>
+            <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="dropdown-item" href="/main/game">Game</a>
+        </li>
+        <!--
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        -->
+    </ul>
+</li>
+        </ul>
+        <!--
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        -->
+    </div>
+
+</nav>
+    <h2 id="polymorphism">Polymorphism</h2>
+
+<p>Polymorphsim is to have many forms.</p>
+<ul>
+  <li>“A reference variable <strong>polymorphic</strong> when it can refer to objects of different classes in the code”</li>
+  <li>“A method is <strong>polymorphic</strong> when it is overriden in at least one subclass”</li>
+  <li>“<strong>Polymorphism</strong> is the act of executing an overriden <code class="language-plaintext highlighter-rouge">non-static</code> method from the correct class at runtime based on the actual object type”</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">length</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">width</span><span class="o">;</span>
+
+    <span class="c1">// Parameterized constructor</span>
+    <span class="kd">public</span> <span class="nf">Shape</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">length</span> <span class="o">=</span> <span class="n">length</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">width</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Method to calculate the area</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calc_area</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">length</span> <span class="o">*</span> <span class="k">this</span><span class="o">.</span><span class="na">width</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Triangle</span> <span class="kd">extends</span> <span class="nc">Shape</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">side1</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">side2</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">side3</span><span class="o">;</span>
+
+    <span class="c1">// Constructor that takes a name and three side lengths</span>
+    <span class="kd">public</span> <span class="nf">Triangle</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s3</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// Call to Shape constructor to set the name</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"triangle"</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">side1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">side2</span> <span class="o">=</span> <span class="n">s2</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">side3</span> <span class="o">=</span> <span class="n">s3</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calc_area</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">double</span> <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="n">side1</span> <span class="o">+</span> <span class="n">side2</span> <span class="o">+</span> <span class="n">side3</span><span class="o">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="o">;</span> <span class="c1">// Semi-perimeter</span>
+        <span class="k">return</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">s</span> <span class="o">*</span> <span class="o">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">side1</span><span class="o">)</span> <span class="o">*</span> <span class="o">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">side2</span><span class="o">)</span> <span class="o">*</span> <span class="o">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">side3</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nc">Shape</span> <span class="n">triangle</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Triangle</span><span class="o">(</span><span class="s">"Equilateral"</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">);</span> <span class="c1">//creates a "Shape" class using a "Triangle" constructor</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">triangle</span><span class="o">.</span><span class="na">calc_area</span><span class="o">());</span> <span class="c1">// Therefore the calc_area is overriden</span></code></pre></figure>
+
+<h2 id="how-does-this-work">How Does This Work?</h2>
+
+<p><img src="/main/images/java/StaticVsDynamicType.png" alt="Static Vs Dynamic Type" /></p>
+
+<p>Let’s start with this line:
+<code class="language-plaintext highlighter-rouge">Shape myObject = new Triangle();</code></p>
+
+<p>It may seem like you are magically creating a Shape Object with the Triangle, but you are not. Instead you actually are creating a Triangle Object. The difference is that the Shape variable is referencing the Shape parts of the Triangle.</p>
+<ul>
+  <li>“A reference variable can store a refernece to its declared class or any subclass of its declared class”</li>
+</ul>
+
+<p>This also means that if the data type is the SuperClass and you try to call a method that doesn’t exist in the SuperClass, it will return an error. But you can cast the variable to the SubClass because the refrence is the SubClass. After casting if you call a method that is only in the subclass then it won’t return an error.</p>
+
+<p>Next running methods:
+<code class="language-plaintext highlighter-rouge">myObject.calc_area() == Triangle.calc_area(); //where the method is overriden by a subclass</code></p>
+
+<p>When you run a method that the Shape has, it starts at the referenced object and checks if there is an override, if not it moves up the ancestry chain until it either finds an override or finds the orginal method.</p>
+
+<h2 id="static-vs-dynamic-types">Static vs Dynamic Types</h2>
+
+<p><strong>static types</strong>: static types is simply the type.</p>
+
+<p><strong>dynamic types</strong>: dynamic type is the type of the value during runtime</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Shape</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="nf">getName</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"Shape"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="nc">Shape</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="nc">String</span> <span class="nf">getName</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"Square"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nc">Shape</span> <span class="n">myShape</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Square</span><span class="o">();</span></code></pre></figure>
+
+<p><img src="/main/images/java/StaticVsDynamicType.png" alt="static vs dynamic image" /></p>
+
+<h2 id="compile-time-vs-run-time-methods">Compile-Time vs Run-Time methods</h2>
+
+<p>Compile time is when you are writing your code. Once you have written your code it is  <em>compiled</em> into something the computer can run.</p>
+
+<p>Run-time is when you are actually running the code. This is after the complier is complete and when the code starts exectuting.</p>
+
+<p>There are some differences between Compile-Time and Run-Time. The case we will be going over breifly is the difference in methods. When you create a Shape with a Square you can’t run the methods built solely into the square, it must be methods from the shape first. <strong>But why?</strong></p>
+
+<p>This is the difference between Compile-Time and Run-Time</p>
+
+<p>During Runtime: 
+When you are creating a dynamic reference of a different with a type than the static type, it searches the superclass for the attributes of the static type, then overrides any that the child has overriden. But it doesn’t include the methods from the child.</p>
+
+<p>So basically even if you have methods that exist when using the constructor to create an instance, in run-time those methods may be ignored because the static type doesn’t include them.</p>
+
+<p>If you want to run a method that is only in the child class then you can use <strong>down-casting</strong>.</p>
+
+<p><img src="/main/images/java/DownCasting.png" alt="Downcasting Image" /></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Shape</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="nf">getName</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"Shape"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="nc">Shape</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="nc">String</span> <span class="nf">getName</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"Square"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kt">int</span> <span class="nf">getSides</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="mi">4</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nc">Shape</span> <span class="n">myShape</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Square</span><span class="o">();</span> <span class="c1">//this does not have access to the Sqaure methods despite referencing a sqaure</span>
+
+<span class="nc">Square</span> <span class="n">mySquare</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Square</span><span class="o">)</span><span class="n">myShape</span><span class="o">;</span> <span class="c1">//down-cast the Shape to a Sqaure to run the Sqaure specific methods</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">mySquare</span><span class="o">.</span><span class="na">getSides</span><span class="o">());</span><span class="c1">//after down-casting you can now run the Square methods</span></code></pre></figure>
+
+<hr />
+<hr />
+
+<h2 id="examples-of-polymorphism-and-the-effects">Examples of Polymorphism and the effects</h2>
+<p>Here are some examples of Polymorphism.</p>
+
+<p>0- Image to demonstrate Polymorphism</p>
+
+<p><img src="/main/images/java/PolymorphismExample.png" alt="Polymorphism Example" /></p>
+
+<p>1- Executing the overriden method from the referenced subclass in the datatype of the superclass.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Water</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">typeOfWater</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"water"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Lake</span> <span class="kd">extends</span> <span class="nc">Water</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">typeOfWater</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"lake"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nc">Water</span> <span class="n">lake</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Lake</span><span class="o">();</span> <span class="c1">//creates a "Water" class using a "Lake" constructor</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">lake</span><span class="o">.</span><span class="na">typeOfWater</span><span class="o">());</span> <span class="c1">// Therefore the typeOfWater is overriden</span></code></pre></figure>
+
+<p>2- You can also cast from the subclass to the superclass. This means you can pass a subclass into an argument that is asking for the parent class.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Shape</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSize</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="nc">Shape</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSize</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kt">int</span> <span class="nf">getSizePlusOne</span><span class="o">(</span><span class="nc">Shape</span> <span class="n">s</span><span class="o">){</span> <span class="c1">//argument of class "Shape"</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span> <span class="o">+</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="nc">Shape</span> <span class="n">myShape</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Shape</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getSizePlusOne</span><span class="o">(</span><span class="n">myShape</span><span class="o">));</span> <span class="c1">//passes through a "Shape"</span>
+
+<span class="nc">Square</span> <span class="n">mySquare</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Square</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getSizePlusOne</span><span class="o">(</span><span class="n">mySquare</span><span class="o">));</span> <span class="c1">//passes through a "Square" as a "Shape" with the square's "getSize()" method</span></code></pre></figure>
+
+<p>3- And finally it allows you to cast from the superclass to the subclass (<strong>down-casting</strong>). The superclass <strong>must</strong> be referencing the subclass.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Electronic</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">playSound</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Beep boop"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Computer</span> <span class="kd">extends</span> <span class="nc">Electronic</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">playSound</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Click clack"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nc">Electronic</span> <span class="n">device</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Computer</span><span class="o">();</span> <span class="c1">//creates a "Electronic" class using a "Computer" constructor</span>
+
+<span class="nc">Computer</span>  <span class="n">computer</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Computer</span><span class="o">)</span><span class="n">device</span><span class="o">;</span> <span class="c1">//casts the "Electronic" to a "Computer"</span>
+
+<span class="n">computer</span><span class="o">.</span><span class="na">playSound</span><span class="o">();</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Electronic</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">playSound</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Beep boop"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Computer</span> <span class="kd">extends</span> <span class="nc">Electronic</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">playSound</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Click clack"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nc">Electronic</span> <span class="n">device</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Electronic</span><span class="o">();</span> <span class="c1">//creates a "Electronic" class using a "Electronic" constructor</span>
+
+<span class="nc">Computer</span>  <span class="n">computer</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Computer</span><span class="o">)</span><span class="n">device</span><span class="o">;</span> <span class="c1">//cannot cast the "Electronic" to a "Computer"</span></code></pre></figure>
+
+<p>4- Down-casting doesn’t mean changing the reference to the obejct, so polymorphism will still apply</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Furniture</span><span class="o">{</span>
+    <span class="nc">String</span> <span class="nf">getName</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"Furniture"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Table</span> <span class="kd">extends</span> <span class="nc">Furniture</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="nc">String</span> <span class="nf">getName</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"Table"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">CoffeeTable</span> <span class="kd">extends</span> <span class="nc">Table</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="nc">String</span> <span class="nf">getName</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">" Coffee"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nc">Furniture</span> <span class="n">myTable</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CoffeeTable</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myTable</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span> <span class="c1">//runs "CoffeeTable" method</span>
+
+<span class="nc">Table</span> <span class="n">myOtherTable</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Table</span><span class="o">)</span><span class="n">myTable</span><span class="o">;</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myOtherTable</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span> <span class="c1">//method exectuted doesn't change despite casting-down</span></code></pre></figure>
+
+<h3 id="the-object-superclass-returns">the Object Superclass returns</h3>
+<p>Polymorphism also applies with the <strong>Object Superclass</strong>.
+Techically any class or object is an <code class="language-plaintext highlighter-rouge">Object</code>.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Fruit</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">"I'm a Fruit!"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Banana</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">obj</span><span class="o">){</span> <span class="c1">//overrides the equals</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="nc">Object</span> <span class="n">banana</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Banana</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">banana</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">banana</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="kc">null</span><span class="o">));</span> <span class="c1">//if ".equals()" was not overriden from the "Object" this should always return false</span></code></pre></figure>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        </button>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <div class="container">
+                    <img src="/main/images/website-icon.png" width="32" height="32"/>
+                </div>
+            </li>
+            <li class="nav-item">
+            </li>
+        </ul>
+        <!--
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        -->
+    </div>
+
+</nav>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+  <head prefix="og: https://ogp.me/ns#">
+    
+    
+
+    <!-- import site styles-->
+    <link href="/main/styles/base.css" rel="stylesheet" type="text/css" />
+    <!-- import bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>Trystan's Portal</title>
+    <!-- if page defines an website icon, then use it, else use default website icon-->
+    <link rel="icon" type="image/x-icon" href="/main/favicon.ico" />
+    
+    <meta property="og:title" content="Trystan's Portal" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://localhost:4000/main/" />
+    <meta property="og:image" content="http://localhost:4000/main/favicon.ico" />
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.title" content="Trystan's Portal" />
+    <meta name="dcterms.created" content="" />
+    <meta name="dcterms.available" content="2025" />
+    <meta name="dcterms.modified" content="2025-10-17" />
+    <meta name="dcterms.creator" content="Trystan Schmits" />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        </button>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <div class="container">
+                    <a class="navbar-brand" href="/main/">
+                        <img src="/main/images/website-icon.png" width="32" height="32"
+                            class="d-inline-block align-text-top" />
+                        Home
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/main/about">About</a>
+            </li>
+            <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="dropdown-item" href="/main/game">Game</a>
+        </li>
+        <!--
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        -->
+    </ul>
+</li>
+        </ul>
+        <!--
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        -->
+    </div>
+
+</nav>
+    <link href="/main/styles/svg.css" rel="stylesheet" type="text/css" />
+
+<svg viewBox="0 0 100 200">
+    <defs>
+        <radialGradient id="BackgroundGradient">
+            <stop offset="0%" stop-color="#f0f598" />
+            <stop offset="20%" stop-color="#f5ff32ff" />
+            <stop offset="40%" stop-color="#f0f598" />
+            <stop offset="60%" stop-color="#f5ff32ff" />
+            <stop offset="80%" stop-color="#f0f598" />
+            <stop offset="100%" stop-color="#f5ff32ff" />
+        </radialGradient>
+    </defs>
+    <!-- carousel 1 -->
+    <g id="carousel">
+        <rect id="carouselBackground" fill="white" width="100" height="34" x="0" y="11" />
+        <g id="carouselSlides">
+            <!--<a href="/main/"><image width="10" height="10" href="/main/images/website-icon.png"/></a>-->
+            <a href="/main/c-sharp">
+                <image width="100" height="34" href="/main/images/index-page/CSharpSlide.svg" />
+            </a>
+            <a href="/main/java">
+                <image width="100" height="34" href="/main/images/index-page/JavaSlide.svg" />
+            </a>
+        </g>
+        <g id="carouselControls">
+            <text textLength="5" text="" x="10" y="31" id="carouselControlLeft" class="carouselControl" direction="left">&lt;</text>
+            <text textLength="5" text="" x="80" y="31" id="carouselControlRight" class="carouselControl" direction="right">&gt;</text>
+        </g>
+    </g>
+    <!-- sides -->
+    <polygon fill="#ffe600ff" points="0,0 3,0 6,100 0,100" />
+    <polygon fill="#424242ff" points="0,40 100,45 100,60 0,70" />
+    <polygon fill="#ffe600ff" points="92,0 100,0 100,100 95,100" />
+    <!-- title -->
+    <polygon fill="#3d3d3dff" points="0,0 100,0 100,11 0,17" />
+    <text stroke="black" stroke-width=".15" textLength="80" text="" x="10" y="10" class="title">Trystan's Portal</text>
+</svg>
+
+<script type="module" src="/main/js/index/main.js"></script>
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        </button>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <div class="container">
+                    <img src="/main/images/website-icon.png" width="32" height="32"/>
+                </div>
+            </li>
+            <li class="nav-item">
+            </li>
+        </ul>
+        <!--
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        -->
+    </div>
+
+</nav>
+  </body>
+</html>
