@@ -26,10 +26,10 @@ dateModified: 2025-10-17
         <g id="carouselSlides">
             <!--<a href="{{site.baseurl}}/"><image width="10" height="10" href="{{site.baseurl}}/images/website-icon.png"/></a>-->
             <a href="{{site.baseurl}}/c-sharp">
-                <image width="100" height="34" href="{% link images/index-page/CSharpSlide.svg %}"/>
+                <image width="100" height="34" href="{{site.baseurl}}/images/index-page/CSharpSlide.svg"/>
             </a>
             <a href="{{site.baseurl}}/java">
-                <image width="100" height="34" href="{% link images/index-page/JavaSlide.svg %}"/>
+                <image width="100" height="34" href="{{site.baseurl}}/images/index-page/JavaSlide.svg"/>
             </a>
         </g>
         <g id="carouselControls">
