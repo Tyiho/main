@@ -4,6 +4,8 @@
 
 layout: base
 title: Trystan's Portal
+dateAvailable: 2025
+dateModified: 2025-10-17
 ---
 <link href="{{site.baseurl}}/styles/svg.css" rel="stylesheet" type="text/css" />
 

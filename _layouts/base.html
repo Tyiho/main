@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
   <head prefix="og: https://ogp.me/ns#">
+    {% capture ico %}{% if page.icon %}{{page.icon}}{% else %}favicon.ico{% endif %}{% endcapture %}
+    {% capture absolute_ico %}{{ ico | absolute_url }}{% endcapture%}
+
     <!-- import site styles-->
     <link href="{% link styles/base.css %}" rel="stylesheet" type="text/css" />
     <!-- import bootstrap-->
@@ -9,12 +12,19 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <!-- if page defines an website icon, then use it, else use default website icon-->
-    <link rel="icon" type="image/x-icon" href="{% if page.icon %} {% link {{page.icon}} %} {% else %} {% link favicon.ico %} {% endif %}" />
+    <link rel="icon" type="image/x-icon" href="{% link {{ico}} %}" />
     
     <meta property="og:title" content="{{page.title}}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
-    <meta property="og:image" content="{% if page.icon %} {% link {{page.icon}} %} {% else %} {% link favicon.ico %} {% endif %}" />
+    <meta property="og:image" content="{{absolute_ico}}" />
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.title" content="{{page.title}}" />
+    <meta name="dcterms.created" content="{{page.dateCreated}}" />
+    <meta name="dcterms.available" content="{{page.dateAvailable}}" />
+    <meta name="dcterms.modified" content="{{page.dateModified}}" />
+    <meta name="dcterms.creator" content="{%if page.creater %}{{page.creater}}{% else %}Trystan Schmits{% endif %}" />
 
   </head>
   <body>
