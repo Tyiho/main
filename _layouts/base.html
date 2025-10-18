@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  <head>
+  <head prefix="og: https://ogp.me/ns#">
     <!-- import site styles-->
     <link href="{% link styles/base.css %}" rel="stylesheet" type="text/css" />
     <!-- import bootstrap-->
@@ -11,6 +11,11 @@
     <!-- if page defines an website icon, then use it, else use default website icon-->
     <link rel="icon" type="image/x-icon" href="{% if page.icon %} {% link {{page.icon}} %} {% else %} {% link favicon.ico %} {% endif %}" />
     
+    <meta property="og:title" content="{{page.title}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{page.url}}" />
+    <meta property="og:image" content="{% if page.icon %} {% link {{page.icon}} %} {% else %} {% link favicon.ico %} {% endif %}" />
+
   </head>
   <body>
     {% include topbar.html %}

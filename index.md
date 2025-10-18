@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: base
+title: Trystan's Portal
 ---
 <link href="{{site.baseurl}}/styles/svg.css" rel="stylesheet" type="text/css" />
 
@@ -21,9 +22,12 @@ layout: base
     <g id="carousel">
         <rect id="carouselBackground" fill="white" width="100" height="34" x="0" y="11" />
         <g id="carouselSlides">
-            <a href="{{site.baseurl}}/"><image width="10" height="10" href="{{site.baseurl}}/images/website-icon.png"/></a>
+            <!--<a href="{{site.baseurl}}/"><image width="10" height="10" href="{{site.baseurl}}/images/website-icon.png"/></a>-->
             <a href="{{site.baseurl}}/c-sharp">
-                <image width="100" height="34" href="{{site.baseurl}}/images/index-page/CSharpSlide.svg"/>
+                <image width="100" height="34" href="{% link images/index-page/CSharpSlide.svg %}"/>
+            </a>
+            <a href="{{site.baseurl}}/java">
+                <image width="100" height="34" href="{% link images/index-page/JavaSlide.svg %}"/>
             </a>
         </g>
         <g id="carouselControls">

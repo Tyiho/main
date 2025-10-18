@@ -29,7 +29,6 @@
     <use href="#CSharpHexagon" transform="translate(48,12) rotate(15, 0, 5) scale(.5)"/>
     <use href="#CSharpHexagon" transform="translate(60,20) rotate(35, 0, 5) scale(.5)"/>
     <use href="#CSharpHexagon" transform="translate(45,25) rotate(15, 0, 5) scale(.25)"/>
-    <use href="#CSharpHexagon" transform="translate(15,10) rotate(50, 0, 5) scale(.25)"/>
     <use href="#CSharpHexagon" transform="translate(50,6) rotate(60, 0, 5) scale(.25)"/>
     <use href="#CSharpHexagon" transform="translate(72,23) rotate(35, 0, 5) scale(.25)"/>
     <use href="#CSharpHexagon" transform="translate(95,17) rotate(15, 0, 5) scale(.25)"/>
