@@ -27,9 +27,27 @@
     <meta name="dcterms.creator" content="{%if page.creator %}{{page.creator}}{% else %}Trystan Schmits{% endif %}" />
 
   </head>
-  <body>
-    {% include topbar.html %}
-    {{ content }}
-    {% include footer.html %}
+
+{% assign bg = "bg-body-tertiary" %}
+{% assign tx = "text-dark" %}
+{% if page.theme %}
+    {% if page.theme contains "bg-dark" %}
+        {% assign bg = "bg-secondary" %}
+        {% unless page.theme contains "text" %}
+            {% assign tx = "text-light" %}
+        {% endunless %}
+    {% endif %}
+{% endif %}
+
+  <body class="{{bg}} {{tx}}">
+    <header>
+      {% include topbar.html %}
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    <footer>
+      {% include footer.html %}
+    </footer>
   </body>
 </html>

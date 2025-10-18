@@ -1,18 +1,27 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+{% assign bg = "bg-body-tertiary" %}
+{% assign tx = "text-dark" %}
+{% if page.theme %}
+    {% if page.theme contains "bg-dark" %}
+        {% assign bg = "bg-dark" %}
+        {% unless page.theme contains "text" %}
+            {% assign tx = "text-light" %}
+        {% endunless %}
+    {% endif %}
+{% endif %}
+
+<nav class="navbar navbar-expand-lg {{bg}}">
     <div class="container-fluid">
-        </button>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
                 <div class="container">
-                    <a class="navbar-brand" href="{{site.baseurl}}/">
+                    <a class="navbar-brand {{tx}}" href="{{site.baseurl}}/">
                         <img src="{{site.baseurl}}/images/website-icon.png" width="32" height="32"
                             class="d-inline-block align-text-top" />
-                        Home
                     </a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{site.baseurl}}/about">About</a>
+                <a class="nav-link {{tx}}" href="{{site.baseurl}}/about">About</a>
             </li>
             {% include topbar-dropdown.html %}
         </ul>
@@ -23,5 +32,4 @@
         </form>
         -->
     </div>
-
 </nav>

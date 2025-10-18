@@ -1,12 +1,31 @@
-.title {
+@property --index-title-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ffffff;
+}
+@property --index-header-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ff7b00;
+}
+@property --index-header-color-light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ffa44e;
+}
+
+
+.index-title {
     font : bold 10px serif;
-    font-family : Times New Roman;
-    fill: #ffffffff;
+    font-family : 'Times New Roman', Times, serif;
+    fill: var(--index-title-color);
     transition: all 2s;
 }
-.title:hover {
-    fill: url("#BackgroundGradient");
-    font: bold 11px serif;
+.index-header {
+    fill: var(--index-header-color);
+    font: normal 8px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    cursor: default;
 }
 .carouselControl {
     font : 5px monospace;

@@ -1,4 +1,14 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+{% assign bg = "bg-body-tertiary" %}
+{% assign tx = "text-dark" %}
+{% if page.theme %}
+    {% if page.theme contains "bg-dark" %}
+        {% assign bg = "bg-dark" %}
+        {% unless page.theme contains "text" %}
+            {% assign tx = "text-light" %}
+        {% endunless %}
+    {% endif %}
+{% endif %}
+<nav class="navbar navbar-expand-lg {{bg}}">
     <div class="container-fluid">
         </button>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -17,5 +27,4 @@
         </form>
         -->
     </div>
-
 </nav>

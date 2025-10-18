@@ -1,8 +1,19 @@
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+{% assign tx = "text-dark" %}
+{% assign dbt = "" %}
+{% if page.theme %}
+    {% if page.theme contains "bg-dark" %}
+        {% assign dbt = "dark" %}
+        {% unless page.theme contains "text" %}
+            {% assign tx = "text-light" %}
+        {% endunless %}
+    {% endif %}
+{% endif %}
+
+<li class="nav-item dropdown" data-bs-theme="{{dbt}}">
+    <a class="nav-link dropdown-toggle {{tx}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Entertainment</a>
     <ul class="dropdown-menu">
         <li>
-            <a class="dropdown-item" href="{{site.baseurl}}/game">Game</a>
+            <a class="dropdown-item {{tx}}" href="{{site.baseurl}}/game">Game</a>
         </li>
         <!--
         <li><a class="dropdown-item" href="#">Another action</a></li>
