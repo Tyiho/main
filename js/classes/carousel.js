@@ -148,7 +148,7 @@ export default class Carousel {
             currentSlide = currentSlide.children.item(0)
         }
         this.activeSlide = newActiveSlide;
-        if (direction == true) { //up (right)
+        if (direction == false) { //up (right)
             //move slides here
             const time = Date.now();
             currentSlide.setAttribute("destination", Number(this.background.getAttributeNS(null, "x")) + Number(this.background.getAttributeNS(null, "width")));
